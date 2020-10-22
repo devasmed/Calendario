@@ -4,7 +4,6 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 
 import { Activity } from './model/activity';
-//import { Utility } from 'src/app/appcore/utility';
 import { ActivityService } from './service/activity-service';
 
 @Component({
@@ -50,35 +49,6 @@ export class FormActivityComponent implements OnInit, OnDestroy  {
       this.endTimes = result.endTimes;
     });
   }
-
-  /*onConfirm(form: NgForm) {
-    const vm = new Activity();
-    vm.activityId = this.activity.activityId;
-    vm.date = this.activity.date;
-    vm.roomId = Utility.toInteger(form.value.roomId);
-    vm.startTime = Utility.toString(form.value.startTimeId);
-    vm.endTime = Utility.toString(form.value.endTimeId);
-    vm.title = Utility.toString(form.value.title);
-    vm.description = Utility.toString(form.value.description);
-    //
-    if (vm.endTime < vm.startTime) {
-      alert('Attention: startTime > endTime');
-      return;
-    }
-    vm.stepDuration = this.computeStep(vm);
-    //
-    if (this.type === 'create') {
-      this.service.insertActivity(vm).subscribe(
-        result => this.dialogRef.close(result),
-        error => alert(error)
-      );
-    } else {
-      this.service.updateActivity(vm).subscribe(
-        result => this.dialogRef.close(result),
-        error => alert(error)
-      );
-    }
-  }*/
 
   onDelete() {
     const id = this.activity.activityId;
