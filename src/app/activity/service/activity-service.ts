@@ -2,10 +2,10 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, of, throwError } from "rxjs";
 
-import { Activity } from '../scheduler/model/activity';
-import { ChangeActivityArg } from '../scheduler/changeactivityarg';
-import { ActivityRoomTime } from '../model/activityroomtime';
-import { KeyValuePair } from '../model/keyvaluepair';
+import { Activity } from '../model/activity';
+//import { ChangeActivityArg } from '../scheduler/changeactivityarg';
+//import { ActivityRoomTime } from '../model/activityroomtime';
+//import { KeyValuePair } from '../model/keyvaluepair';
 
 @Injectable()
 export class ActivityService {
@@ -13,7 +13,7 @@ export class ActivityService {
 
   constructor(private http: HttpClient) {}
 
-  getActivity(search: ChangeActivityArg): Observable<object> {
+  /*getActivity(search: ChangeActivityArg): Observable<object> {
     let list = this.getActivityList();
 
     if (search.roomId !== 0) {
@@ -28,7 +28,7 @@ export class ActivityService {
     }
 
     return of(list);
-  }
+  }*/
 
   insertActivity(activity: Activity): Observable<string> {
     const list = this.getActivityList();
@@ -81,7 +81,7 @@ export class ActivityService {
     return of('ok');
   }
 
-  getActivityRoomTime(): Observable<object> {
+  /*getActivityRoomTime(): Observable<object> {
     const data = new ActivityRoomTime();
 
     data.rooms.push(new KeyValuePair<number, string>(1, 'Rooom 1'));
@@ -126,7 +126,7 @@ export class ActivityService {
     data.endTimes.push(new KeyValuePair<string, string>('18.00', '18.00'));
 
     return of(data);
-  }
+  }*/
 
   private getActivityList(): Activity[] {
     if (this.activities) {

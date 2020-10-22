@@ -1,19 +1,12 @@
-<h2 mat-dialog-title>{{ title }} activity</h2>
+<h2 mat-dialog-title>Actividad</h2>
 
 <form class="form-container100 popup" (ngSubmit)="onConfirm(f)" #f="ngForm">
   <mat-dialog-content>
     <div *ngIf="activity.activityId !== 0">
       N. activity {{ activity.activityId }}
     </div>
-    <div>Activity date: {{ activity.date | date: 'dd/MM/yyyy' }}</div>
+    <div>Fecha: {{ activity.date | date: 'dd/MM/yyyy' }}</div>
     <br>
-    <mat-form-field>
-      <mat-select name="roomId" placeholder="-- room --" [ngModel]="roomId">
-        <mat-option *ngFor="let room of rooms" [value]="room.key">
-          {{ room.value }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
     <mat-form-field>
       <mat-select name="startTimeId" placeholder="-- time --" [ngModel]="startTimeId">
         <mat-option *ngFor="let time of startTimes" [value]="time.key">
