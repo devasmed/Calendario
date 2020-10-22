@@ -1,11 +1,11 @@
 import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 
-//import { Activity } from 'src/app/scheduler/model/activity';
+import { Activity } from './model/activity';
 //import { Utility } from 'src/app/appcore/utility';
-//import { ActivityService } from 'src/app/service/activity-service';
+import { ActivityService } from './service/activity-service';
 
 @Component({
   selector: 'app-dialogsearch',
@@ -51,7 +51,7 @@ export class FormActivityComponent implements OnInit, OnDestroy  {
     });
   }
 
-  onConfirm(form: NgForm) {
+  /*onConfirm(form: NgForm) {
     const vm = new Activity();
     vm.activityId = this.activity.activityId;
     vm.date = this.activity.date;
@@ -78,7 +78,7 @@ export class FormActivityComponent implements OnInit, OnDestroy  {
         error => alert(error)
       );
     }
-  }
+  }*/
 
   onDelete() {
     const id = this.activity.activityId;
